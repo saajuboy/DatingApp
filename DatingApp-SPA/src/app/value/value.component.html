@@ -1,0 +1,18 @@
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Names</th>
+      </tr>
+    </thead>
+    <tbody>
+      <p *ngFor="let value of values">
+      <tr>
+        <td scope="row"> {{value.id}}</td>
+        <td>{{value.name}}</td>
+      </tr>
+    </p>
+    </tbody>
+  </table>
+
