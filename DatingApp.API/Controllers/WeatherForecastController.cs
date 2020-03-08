@@ -40,14 +40,14 @@ namespace DatingApp.API.Controllers
             // })
             // .ToArray();
 
-            var values = await  _context.Valuess.ToListAsync();
+            var values = await  _context.Values.ToListAsync();
             return Ok(values);
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetValue(int id)
         {
-            var value = await _context.Valuess.FirstOrDefaultAsync(x => x.Id == id);
+            var value = await _context.Values.FirstOrDefaultAsync(x => x.Id == id);
 
             return Ok(value);
         }
