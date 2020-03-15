@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace DatingApp.API.Controllers
 {
-    [Authorize]
+    // [Authorize]
     [ApiController]
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
@@ -45,7 +45,7 @@ namespace DatingApp.API.Controllers
             var values = await  _context.Values.ToListAsync();
             return Ok(values);
         }
-        [AllowAnonymous]
+        // [AllowAnonymous]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetValue(int id)
         {
