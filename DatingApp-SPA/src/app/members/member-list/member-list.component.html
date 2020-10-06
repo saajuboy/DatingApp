@@ -38,16 +38,46 @@
         name="gender"
       >
         <option *ngFor="let gender of genderList" [value]="gender.value">
-          {{gender.display}}
+          {{ gender.display }}
         </option>
       </select>
     </div>
     <button type="submit" class="btn btn-primary" style="margin-left: 10px">
       Apply Filters
     </button>
-    <button type="button" class="btn btn-info" (click)="resetFilters()" style="margin-left: 10px">
+    <button
+      type="button"
+      class="btn btn-info"
+      (click)="resetFilters()"
+      style="margin-left: 10px"
+    >
       Reset Filter
     </button>
+
+    <div class="col">
+      <div class="btn-group float-right">
+        <button
+          type="button"
+          name="orderBy"
+          (click)="loadUsers()"
+          [(ngModel)]="userParams.orderBy"
+          btnRadio="lastActive"
+          class="btn btn-primary"
+        >
+          Last Active
+        </button>
+        <button
+          type="button"
+          name="orderBy"
+          (click)="loadUsers()"
+          [(ngModel)]="userParams.orderBy"
+          btnRadio="created"
+          class="btn btn-primary"
+        >
+          Newest Members
+        </button>
+      </div>
+    </div>
   </form>
   <br />
   <div class="mt-2">
